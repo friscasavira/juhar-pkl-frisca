@@ -9,7 +9,13 @@ Route::get('/', function () {
     return view('index');
 });
 
-route::get('/admin/login', [AdminLoginController::class, 'login'])->name('admin.login');
-route::post('/admin/login', [AdminLoginController::class, 'auth'])->name('admin.auth');
+route::middleware(['guest'])->group(function () {
+    route::get('/admin/login', [AdminLoginController::class, 'login'])->name('admin.login');
+    route::post('/admin/login', [AdminLoginController::class, 'auth'])->name('admin.auth');
+});
 
-route::get('/admin/dashboard', [AdminController::class,'dashboard'])->name('admin.dashboard');
+route::middleware(['admin'])->group(function() {
+    route::get('/admin/dashboard', [AdminController::class,'dashboard'])->name('admin.dashboard');
+    route::get('/admin/logout', [AdminController::class, 'logout'])->name('admin.logout');
+    route::get('/admin/guru', [AdminController::class, 'guru'])->name('admin.guru');
+});
