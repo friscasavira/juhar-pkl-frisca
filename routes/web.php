@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\GuruController;
 use App\Http\Controllers\Auth\AdminLoginController;
 use App\Models\Admin\Admin;
 use Illuminate\Support\Facades\Route;
@@ -17,5 +18,9 @@ route::middleware(['guest'])->group(function () {
 route::middleware(['admin'])->group(function() {
     route::get('/admin/dashboard', [AdminController::class,'dashboard'])->name('admin.dashboard');
     route::get('/admin/logout', [AdminController::class, 'logout'])->name('admin.logout');
-    route::get('/admin/guru', [AdminController::class, 'guru'])->name('admin.guru');
+    route::get('/admin/guru', [GuruController::class, 'guru'])->name('admin.guru');
+    route::get('/admin/guru/tambah', [GuruController::class, 'create'])->name('admin.guru.create');
+    route::post('/admin/guru/tambah', [GuruController::class, 'store'])->name('admin.guru.store');
+
+
 });
