@@ -9,7 +9,7 @@ class Guru extends Model
 {
     use HasFactory;
     protected $table = 'guru';
-    protected $primarykey = 'id_guru';
+    protected $primaryKey = 'id_guru';
 
     protected $fillable = [
         'nip',
