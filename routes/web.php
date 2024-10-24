@@ -58,4 +58,11 @@ route::middleware(['admin'])->group(function() {
 });
 
 
-    route::get('/guru/dashboard', [GuruController::class,'dashboard'])->name('guru.dashboard');
+    route::middleware(['guru'])->group(function () {
+        route::get('/guru/dashboard', [GuruController::class,'dashboard'])->name('guru.dashboard');
+        route::get('/guru/pembimbing', [PembimbingController::class,'pembimbingGuru'])->name('guru.pembimbing');
+        route::get('/guru/logout', [GuruController::class, 'logout'])->name('guru.logout');
+        route::get('/guru/pembimbing/{id}/siswa', [SiswaController::class, 'siswaGuru'])->name('guru.pembimbing.siswa');
+        route::get('/guru/profile', [GuruController::class, 'profile'])->name('guru.profile');
+        route::put('/guru/profile/update', [GuruController::class, 'updateGuru'])->name('guru.profile.update');
+    });
