@@ -27,7 +27,7 @@
                         <input type="text" class="form-control" id="nama_siswa" name="nama_siswa"
                             value="{{ old('nama_siswa', $siswa->nama_siswa) }}">
                     <div class="text-danger">
-                        @error('email')
+                        @error('nama_siswa')
                             {{ $message }}
                         @enderror
                     </div>

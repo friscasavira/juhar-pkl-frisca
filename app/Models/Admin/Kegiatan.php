@@ -24,4 +24,6 @@ class Kegiatan extends Model
         return $this->belongsTo(Siswa::class, 'id_siswa', 'id_siswa');
 
     }
+
+
 }

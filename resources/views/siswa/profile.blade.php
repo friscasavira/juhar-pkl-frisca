@@ -1,4 +1,4 @@
-@extends('guru.layouts.app')
+@extends('siswa.layouts.app')
 
 @section('title', 'Profile')
 
@@ -18,23 +18,14 @@
                     <div class="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1"></div>
                 </div>
             </div>
-            <form action="{{ route('guru.profile.update') }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('siswa.profile.update') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
                 <div class="mb-3">
-                    <label for="nip" class="form-label">NIP</label>
-                    <input type="text" class="form-control" id="nip" name="nip" value="{{ old('nip', $profile->nip ?? 'Belum punya nip') }}" readonly>
+                    <label for="nins" class="form-label">NISN</label>
+                    <input type="text" class="form-control" id="nins" name="nisn" value="{{ old('nisn', $profile->nisn) }}" readonly>
                     <div class="text-danger">
-                        @error('nip')
-                        {{ $message }}
-                        @enderror
-                    </div>
-                </div>
-                <div class="mb-3">
-                    <label for="email" class="form-label">Email</label>
-                    <input type="text" class="form-control" id="email" name="email" value="{{ old('email', $profile->email) }}">
-                    <div class="text-danger">
-                        @error('email')
+                        @error('nins')
                         {{ $message }}
                         @enderror
                     </div>
@@ -48,10 +39,10 @@
                         @enderror
                     </div>
                     <div class="mb-3">
-                        <label for="nama_guru" class="form-label">Nama Guru</label>
-                        <input type="text" class="form-control" id="nama_guru" name="nama_guru" value="{{ old('nama_guru', $profile->nama_guru) }}">
+                        <label for="nama_siswa" class="form-label">Nama Siswa</label>
+                        <input type="text" class="form-control" id="nama_siswa" name="nama_siswa" value="{{ old('nama_siswa', $profile->nama_siswa) }}">
                         <div class="text-danger">
-                            @error('nama_guru')
+                            @error('nama_siswa')
                             {{ $message }}
                             @enderror
                         </div>
