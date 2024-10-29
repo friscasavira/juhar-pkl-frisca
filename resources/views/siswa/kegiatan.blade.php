@@ -14,7 +14,7 @@
             @endif
             <h6 class="mb-4">Data Kegiatan</h6>
             <div class="table-responsive">
-                <a href="" class="btn btn-primary btn-sm">Tambah</a>
+                <a href="{{ route('siswa.kegiatan.create') }}" class="btn btn-primary btn-sm">Tambah</a>
                 <table class="table" id="kegiatan">
                     <thead>
                         <tr>
@@ -31,9 +31,11 @@
                             <th scope="row">{{ $loop->iteration}}</th>
                             <td>{{ $kegiatan->tanggal_kegiatan }}</td>
                             <td>{{ $kegiatan->nama_kegiatan}}</td>
+
                             <td>
-                                <a href="" class="btn btn-warning btn-sm">Edit</a>
-                                <a href="" class="btn btn-danger btn-sm">Hapus</a>
+                                <a href="{{ route('siswa.kegiatan.edit', $kegiatan->id_kegiatan) }}" class="btn btn-warning btn-sm">Edit</a>
+                                <a href="{{ route('siswa.kegiatan.delate', $kegiatan->id_kegiatan) }}" onclick="return confirm('Yakin ingin hapus data?')" class="btn btn-danger btn-sm">Hapus</a>
+                                <a href="{{ route('siswa.kegiatan.detail', $kegiatan->id_kegiatan) }}" class="btn btn-info btn-sm">Detail</a>
 
                             </td>
                         </tr>

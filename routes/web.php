@@ -77,4 +77,11 @@ route::middleware(['siswa'])->group(function () {
     route::put('/siswa/profile/update', [siswaController::class, 'updateProfile'])->name('siswa.profile.update');
     route::get('/siswa/logout', [SiswaController::class, 'logout'])->name('siswa.logout');
     route::get('/siswa/kegiatan', [KegiatanController::class, 'kegiatanSiswa'])->name('siswa.kegiatan');
+    route::get('/siswa/kegiatan/tambah', [KegiatanController::class, 'create'])->name('siswa.kegiatan.create');
+    route::post('/siswa/kegiatan/tambah', [KegiatanController::class, 'store'])->name('siswa.kegiatan.store');
+    Route::get('/siswa/kegiatan/edit/{id_kegiatan}', [KegiatanController::class, 'editKegiatan'])->name('siswa.kegiatan.edit');
+    Route::put('/siswa/kegiatan/edit/{id_kegiatan}', [KegiatanController::class, 'updateKegiatan'])->name('siswa.kegiatan.update');
+    Route::get('/siswa/kegiatan/delate/{id_kegiatan}', [KegiatanController::class, 'delateKegiatan'])->name('siswa.kegiatan.delate');
+    route::get('/siswa/kegiatan/detail/{id_kegiatan}', [KegiatanController::class, 'detailKegiatanSiswa'])->name('siswa.kegiatan.detail');
+
 });
