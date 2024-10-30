@@ -23,7 +23,7 @@
                     <label for="nama_siswa" class="form-label">Nama Siswa</label>
                     <input type="text" class="form-control" id="nama_siswa" name="nama_siswa">
                     <div class="text-danger">
-                        @error('email')
+                        @error('nama_siswa')
                         {{ $message }}
                         @enderror
                     </div>

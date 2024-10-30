@@ -36,7 +36,7 @@
                 </div>
                 <div class="mb-3">
                     <label for="ringkasan_kegiatan" class="form-label">Ringkasan Kegiatan</label>
-                    <textarea name="ringkasan_kegiatan" id="ringkasan_kegiatan" rows="5" class="form-control">{{$kegiatan->rigkasan_kegiatan}}</textarea>
+                    <textarea name="ringkasan_kegiatan" id="ringkasan_kegiatan" rows="5" class="form-control">{{$kegiatan->ringkasan_kegiatan}}</textarea>
                     <div class="text-danger">
                         @error('ringkasan_kegiatan')
                         {{ $message }}

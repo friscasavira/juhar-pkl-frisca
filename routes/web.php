@@ -69,6 +69,9 @@ route::middleware(['guru'])->group(function () {
     route::put('/guru/profile/update', [GuruController::class, 'updateGuru'])->name('guru.profile.update');
     route::get('/guru/pembimbing/{id}/siswa/{id_siswa}/kegiatan', [KegiatanController::class, 'kegiatan'])->name('guru.pembimbing.siswa.kegiatan');
     route::get('/guru/pembimbing/{id}/siswa/{id_siswa}/kegiatan/detail/{id_kegiatan}', [KegiatanController::class, 'detailKegiatan'])->name('guru.pembimbing.siswa.kegiatan.detail');
+
+    route::get('/guru/pembimbing/{id}/siswa/{id_siswa}/kegiatan/cari', [KegiatanController::class, 'cariKegiatan'])->name('guru.pembimbing.siswa.kegiatan.cari');
+
 });
 
 route::middleware(['siswa'])->group(function () {
@@ -83,5 +86,6 @@ route::middleware(['siswa'])->group(function () {
     Route::put('/siswa/kegiatan/edit/{id_kegiatan}', [KegiatanController::class, 'updateKegiatan'])->name('siswa.kegiatan.update');
     Route::get('/siswa/kegiatan/delate/{id_kegiatan}', [KegiatanController::class, 'delateKegiatan'])->name('siswa.kegiatan.delate');
     route::get('/siswa/kegiatan/detail/{id_kegiatan}', [KegiatanController::class, 'detailKegiatanSiswa'])->name('siswa.kegiatan.detail');
+
 
 });

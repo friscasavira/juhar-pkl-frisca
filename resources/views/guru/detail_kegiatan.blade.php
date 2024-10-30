@@ -42,9 +42,9 @@
                     <textarea name="ringkasan_kegiatan" id="ringkasan_kegiatan" rows="10" class="form-control"></textarea>
                 </div>
                 <div class="mb-3">
-                    <label for="foto" class="form-label">Foto</label>
+                    <label for="foto" class= "form-label">Foto</label>
                     <div class="text-center">
-                        <img src="{{ asset('storage/' . $kegiatan->foto) }}" alt="" height="700">
+                        <img src="{{ asset('storage/' . $kegiatan->foto) }}" alt="" height="500">
                     </div>
                 </div>
                 <a href="{{ route('guru.pembimbing.siswa.kegiatan', ['id' => $id, 'id_siswa' => $kegiatan->id_siswa]) }}"

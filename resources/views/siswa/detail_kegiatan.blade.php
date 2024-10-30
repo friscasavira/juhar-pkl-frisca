@@ -45,7 +45,7 @@
                 <div class="mb-3">
                     <label for="foto" class="form-label">Foto</label>
                     <div class="text-center">
-                        <img src="{{ asset('storage/' . $kegiatan->foto) }}" alt="" height="700">
+                        <img src="{{ asset('storage/' . $kegiatan->foto) }}" alt="" height="500">
                     </div>
                 </div>
                 <a href="{{ route('siswa.kegiatan') }}" class="btn btn-primary">Kembali</a>
